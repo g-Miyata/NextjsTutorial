@@ -5,7 +5,12 @@ export const metadata: Metadata = {
     absolute: 'Blog',
   },
 };
-const Blog = () => {
+const Blog = async () => {
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('intentional delay');
+    }, 2000);
+  });
   return <h1>Blog</h1>;
 };
 
